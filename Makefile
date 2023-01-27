@@ -1,5 +1,11 @@
+.SILENT:
+
+BINARY_NAME=apiserver
+
 .PHONY: build
 build:
 	go build -v ./cmd/apiserver
 
-.DEFAULT_GOAL := build
+.PHONY: run
+run: build
+	./${BINARY_NAME}
