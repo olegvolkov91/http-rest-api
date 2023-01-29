@@ -8,10 +8,10 @@ import (
 
 // User ...
 type User struct {
-	ID                int
-	Email             string
-	Password          string
-	EncryptedPassword string
+	ID                int    `json:"id"`
+	Email             string `json:"email"`
+	Password          string `json:"password,omitempty"`
+	EncryptedPassword string `json:"-"`
 }
 
 // Validate ...
@@ -34,6 +34,11 @@ func (u *User) HashPassword() error {
 		u.EncryptedPassword = enc
 	}
 	return nil
+}
+
+func (u *User) Sanitaze() {
+	u.Password = ""
+
 }
 
 func encryptString(password string) (string, error) {
