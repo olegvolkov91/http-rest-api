@@ -1,3 +1,4 @@
 bind_addr = "localhost:8080"
 log_level = "debug"
 database_url = "host=localhost user=postgres password=postgrespw dbname=postgres port=55005 sslmode=disable"
+session_key="[#|$}iZ|9kqq=6ILM5=$oWC1{o{G!W),jL#$G^]~5/zk3T/1QJwP;u=@kl=AW_>"
